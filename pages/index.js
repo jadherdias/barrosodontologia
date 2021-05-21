@@ -1,4 +1,4 @@
 function Home(){
-    return <div>Bem vindo!</div>    
+    return <div><h1>Olaaa enfermeira!!</h1></div>    
 }
 export default Home
