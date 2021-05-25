@@ -1,4 +1,12 @@
-function Home(){
-    return <div><h1>Olaaa enfermeira!!</h1></div>    
+import React, { Component } from "react";
+import Router from "next/router";
+
+export default class Index extends Component {
+  componentDidMount = () => {
+    Router.push("/components");
+  };
+
+  render() {
+    return <div />;
+  }
 }
-export default Home
