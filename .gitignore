@@ -3,13 +3,6 @@
 # dependencies
 /node_modules
 
-# testing
-/coverage
-
-# production
-/build
-/out
-
 # misc
 .DS_Store
 .env.local
@@ -17,12 +10,9 @@
 .env.test.local
 .env.production.local
 
-package-lock.json
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# package
-/dist
+# Next.js
 /.next
