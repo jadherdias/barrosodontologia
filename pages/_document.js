@@ -1,33 +1,26 @@
-import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheets } from "@material-ui/styles";
+import React from 'react';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheets, makeStyles } from '@material-ui/core/styles';
+import theme from '../src/theme';
 
-class MyDocument extends Document {
+
+
+export default class MyDocument extends Document {
+  
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pt">
         <Head>
-          <meta charSet="utf-8" />
-          <meta name="theme-color" content="#000000" />
-          <link rel="shortcut icon" href="/img/favicon.png" />
-          <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="/img/apple-icon.png"
-          />
-          {/* Fonts and icons */}
+          {/* PWA primary color */}
+          <meta name="theme-color" content={theme.palette.primary.main} />
           <link
             rel="stylesheet"
-            type="text/css"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <link
-            href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
-            rel="stylesheet"
-          />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet" />
         </Head>
-        <body>
-          <div id="page-transition"></div>
+        <body style={theme.corpo.background}>
           <Main />
           <NextScript />
         </body>
@@ -36,6 +29,8 @@ class MyDocument extends Document {
   }
 }
 
+// `getInitialProps` belongs to `_document` (instead of `_app`),
+// it's compatible with server-side generation (SSG).
 MyDocument.getInitialProps = async (ctx) => {
   // Resolution order
   //
@@ -73,13 +68,6 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [
-      <React.Fragment key="styles">
-        {initialProps.styles}
-        {sheets.getStyleElement()}
-      </React.Fragment>,
-    ],
+    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
   };
 };
-
-export default MyDocument;

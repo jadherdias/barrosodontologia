@@ -1,12 +1,29 @@
-import React, { Component } from "react";
-import Router from "next/router";
+import React from 'react';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import ProTip from '../src/ProTip';
+//import Link from '../src/Link';
+import Copyright from '../src/Copyright';
+import Cabecalho from '../src/components/Header.js';
+import Corpo from '../src/components/LandBody.js';
+import Card from '../src/components/Cards.js';
+import Mapa from '../src/components/Mapa';
+import Planos from '../src/components/Planos';
 
-export default class Index extends Component {
-  componentDidMount = () => {
-    Router.push("/components");
-  };
+//import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
-  render() {
-    return <div />;
-  }
+
+
+export default function Index() {
+  return (
+<main>
+  <Cabecalho /> 
+  <Corpo />
+  <Card />
+  <Mapa />
+  <Planos/>
+</main>
+
+  );
 }
