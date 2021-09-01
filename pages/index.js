@@ -10,6 +10,7 @@ import Corpo from '../src/components/LandBody.js';
 import Card from '../src/components/Cards.js';
 import Mapa from '../src/components/Mapa';
 import Planos from '../src/components/Planos';
+import Head from '../src/components/Head';
 
 //import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
@@ -18,6 +19,7 @@ import Planos from '../src/components/Planos';
 export default function Index() {
   return (
 <main>
+  <Head />
   <Cabecalho /> 
   <Corpo />
   <Card />

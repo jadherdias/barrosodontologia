@@ -55,7 +55,7 @@ function Header(){
                 <div style={{width: '10%' , height: 'relative'}}></div>
                 <div style={{display:'flex', float:'right'}}>
                     <div><IconButton ><Link href="instagram://media?id=434784289393782000_15903882" ><div><IconeInstagram color="primary" /><span className={classes.spanicon}> @barros_odontologia</span></div></Link></IconButton></div>
-                    <div><IconButton ><Link href="https://wa.me/556236021162" ><div><IconeWhatsApp color="primary" /><span className={classes.spanicon} > (62) 36021162</span></div></Link></IconButton></div>
+                    <div><IconButton ><Link href="https://wa.me/556236021162" ><div><IconeWhatsApp color="primary" /><span className={classes.spanicon} > (62) 3602-1162</span></div></Link></IconButton></div>
                     <div><Menu /></div>
                     
                 </div>
